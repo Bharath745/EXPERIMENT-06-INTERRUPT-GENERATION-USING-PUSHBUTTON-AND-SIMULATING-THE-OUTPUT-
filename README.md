@@ -90,12 +90,43 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 ## STM 32 CUBE PROGRAM :
 
+```c
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+int main(void)
+{
+  
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  while (1)
+  {
+  }
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if((GPIO_Pin == GPIO_PIN_0))
+	{
+		HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_1);
+	}
+}
+```
 
 
 ## Output screen shots of proteus  :
- 
+
+  ### ON:
+ ![op1](https://github.com/Bharath745/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/94508354/8a52349b-c712-42e4-9305-038d90bbcd5c)
+
+
+ ### OFF:
+ ![op2](https://github.com/Bharath745/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/94508354/a6f956e0-d916-469c-bf6f-c16b93174ab5)
+
+
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+ ![op3](https://github.com/Bharath745/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/94508354/1c13a7f4-ba3b-4ae9-b24e-6cc22e071fc0)
+
  
  
 ## Result :
